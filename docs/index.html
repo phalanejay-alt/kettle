@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KETTLE | x402 Payment Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: white;
+      margin: 0;
+      padding: 32px;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .header h1 {
+      margin: 0 0 8px;
+      font-size: 2.5rem;
+    }
+    .header p {
+      margin: 0;
+      opacity: 0.8;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+    .card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 20px;
+      backdrop-filter: blur(8px);
+    }
+    .label {
+      opacity: 0.75;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .value {
+      margin-top: 8px;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    .panel {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 22px;
+      margin-top: 16px;
+    }
+    code {
+      background: rgba(0,0,0,0.2);
+      padding: 6px 9px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-top: 12px;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>KETTLE</h1>
+      <p>x402 URL checking API • Base mainnet • 0.005 USDC per check</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="label">Total revenue</div>
+        <div class="value">$0.00</div>
+      </div>
+      <div class="card">
+        <div class="label">Verified payments</div>
+        <div class="value">0</div>
+      </div>
+      <div class="card">
+        <div class="label">Checks</div>
+        <div class="value">0</div>
+      </div>
+      <div class="card">
+        <div class="label">Fee</div>
+        <div class="value">0.005</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Example request</h2>
+      <code>curl -X POST https://your-worker.example.com/v1/check-url -H "Content-Type: application/json" -H "x-payment: {\"txHash\":\"0xYOUR_TX_HASH\",\"amount\":\"5000\"}" -d '{"url":"https://example.com"}'</code>
+    </div>
+
+    <div class="panel">
+      <h2>Payment details</h2>
+      <p>Token: USDC on Base</p>
+      <p>Network: Base mainnet</p>
+      <p>Chain ID: 8453</p>
+      <p>Price: 0.005 USDC / check</p>
+    </div>
+  </div>
+</body>
+</html>
